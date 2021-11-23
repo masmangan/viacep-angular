@@ -1,0 +1,12 @@
+<p> Informe o CEP:</p>
+
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+  <label for="cepId">CEP</label>
+  
+  <input id="cepId" type="text" formControlName="cepId">
+  <br>
+  <button class="button" type="submit" >🔍 Consultar</button>
+
+</form>

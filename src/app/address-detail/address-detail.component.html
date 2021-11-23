@@ -1,0 +1,25 @@
+
+<div *ngIf="address && address.logradouro">
+  <h2>✓{{cepId}}</h2>
+  <p>{{address.logradouro}}</p>
+  <p>{{address.complemento}}</p>
+  <p>{{address.bairro}}</p>
+  <p>{{address.localidade}}</p>
+  <p>{{address.uf}}</p>
+  <p>Brasil</p>
+</div>
+
+<div *ngIf="address && !address.logradouro">
+  <h2>✗ {{cepId}}</h2>
+  <p>O CEP informado não foi localizado.</p>
+</div>
+
+<div *ngIf="!address && !error">
+    <p>Aguarde...</p>
+</div>
+
+<div *ngIf="error instanceof ErrorEvent">
+  <h2>✗ {{cepId}}</h2>
+  
+  <p>O CEP informado é inválido ou ocorreu falha ao contactar o servidor. ({{error.status}})</p>  
+</div>
